@@ -1,0 +1,370 @@
+:root {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: normal;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px dotted;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.toc {
+    display: none;
+}
+
+.nav-menu {
+    display: inline;
+}
+
+@media only screen and (min-width: 992px) {
+    .content-container {
+        flex-direction: row;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav {
+        flex: 0 0 10%;
+        margin-right: 10px;
+    }
+
+    .nav-bar {
+        max-height: 100vh !important;
+    }
+
+    .content {
+        flex: 1 calc(80% - 20px);
+    }
+
+    .toc {
+        display: inline;
+        flex: 0 0 10%;
+        margin-left: 10px;
+    }
+}
+
+kbd {
+    border: 1px solid #999;
+}
+
+a {
+    color: #900;
+}
+
+a:hover {
+    color: #000;
+}
+
+.header {
+    margin-bottom: 0;
+}
+
+body {
+    max-width: 992px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: auto;
+}
+
+.content {
+    margin-bottom: 2em;
+}
+
+.content h1 {
+    border-bottom: 1px dotted;
+    border-color: #999;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.content h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+.page {
+    display: flex;
+    color: #999;
+}
+
+.page a {
+    color: #000;
+    text-decoration: none;
+}
+
+.page-prev {
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1
+}
+
+.page-next {
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: right;
+}
+
+.footer {
+    border-top: 1px dotted;
+    border-color: #999;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}
+
+.logo {
+    text-align: left;
+    text-decoration: none;
+}
+
+.header ul {
+    display: block;
+    padding: 0;
+}
+
+.header li {
+    display: inline;
+    padding-right: 15px;
+    line-height: normal;
+    border: none;
+    font-size: 1em;
+}
+
+.header .tools {
+    float: right;
+    padding-right: 0;
+}
+
+.header a {
+    text-decoration-line: none;
+    color: #999;
+}
+
+.header a:hover {
+    text-decoration-line: none;
+    color: #555;
+}
+
+.header .active a {
+    font-weight: 600;
+    text-decoration-line: none;
+    color: #000
+}
+
+.logo a {
+    color: #000;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #900
+}
+
+.logo a span {
+    color: #900
+}
+
+.logo a:hover span {
+    color: #000
+}
+
+
+input[id='nav-chk'] {
+    display: none;
+}
+
+.nav-menu svg {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
+.nav-bar {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+input[id='nav-chk']:not(:checked)+.nav-bar {
+    max-height: 100vh;
+}
+
+.nav-bar ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-bar li {
+    margin-bottom: 10px;
+}
+
+.nav-bar li a {
+    text-decoration: none;
+    color: #999;
+}
+
+.nav-bar li.active a {
+    color: #000;
+    font-weight: 600;
+}
+
+
+.tool svg {
+    height: 1em;
+    width: 1em;
+    margin-left: 5px;
+    color: #999;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.tool span {
+    display: none;
+}
+
+.tool:hover svg {
+    color: #555;
+}
+
+.tool:hover span {
+    display: inline;
+    color: #555;
+}
+
+.highlight {
+    border: 1px dotted #999;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 0;
+}
+
+.highlight pre {
+    margin: 0;
+}
+
+.tabbed-set {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 0;
+    border-radius: 0.1em;
+}
+
+.tabbed-set>input {
+    display: none;
+}
+
+.tabbed-set label {
+    color: #999;
+    width: auto;
+    padding: 0.5em 1.25em 0.5em;
+    font-size: 0.84em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 250ms, color 250ms;
+    border-bottom: 1px dotted #999;
+}
+
+.tabbed-set label:hover {
+    color: #555;
+    border-bottom: 1px dotted #555;
+}
+
+.tabbed-set .tabbed-content {
+    width: 100%;
+    display: none;
+}
+
+.tabbed-set input {
+    position: absolute;
+    opacity: 0;
+}
+
+.tabbed-set input:checked:nth-child(n+1)+label {
+    color: #000;
+    border-bottom: 1px solid #900;
+    font-weight: 600;
+}
+
+
+@media screen {
+    .tabbed-set input:nth-child(n+1):checked+label+.tabbed-content {
+        order: 99;
+        display: block;
+        padding-top: 10px;
+    }
+}
+
+
+.admonition,
+details {
+    border: 1px solid transparent;
+    text-align: left;
+}
+
+.admonition.note,
+details.note {
+    /* csslint allow: adjoining-classes */
+    color: #2e6b89;
+    background-color: #e2f0f7;
+    border-color: #bce8f1;
+}
+
+.admonition.warning,
+details.warning {
+    /* csslint allow: adjoining-classes */
+    color: #7a6032;
+    background-color: #fffae5;
+    border-color: #fbeed5;
+}
+
+.admonition.danger,
+details.danger {
+    /* csslint allow: adjoining-classes */
+    color: #7f3130;
+    background-color: #fde3e3;
+    border-color: #eed3d7;
+}
+
+.admonition-title,
+summary {
+    font-weight: bold;
+    text-align: left;
+    margin: 10px;
+}
+
+.admonition>p:last-child,
+details>p:last-child {
+    margin: 10px;
+}
+
+.toc ul {
+    margin-bottom: 5px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.toc li {
+    padding: 5px 0 5px 10px;
+    text-align: right;
+
+}
+
+.toc li a {
+    text-decoration: none;
+    color: #999;
+}
+
+.toc li.active a {
+    color: #000;
+    font-weight: 600;
+}

@@ -1,0 +1,14 @@
+{% if nav_item.children %}
+  {% set first_item = nav_item.children | first %}
+  <li {% if nav_item.children | selectattr("active") | first %}class="active"{% endif %}>
+    <a href="{{ first_item.url | url }}">
+      {{ nav_item.title }}
+    </a>
+  </li>
+{% else %}
+  <li {% if nav_item.active %}class="active"{% endif %}>
+    <a href="{{ nav_item.url | url }}" class="{{ class }}">
+      {{ nav_item.title }}
+    </a>
+  </li>
+{% endif %}

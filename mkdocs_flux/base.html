@@ -1,0 +1,143 @@
+<!--
+  This Basic theme serves as an example for how to create other
+  themes by demonstrating the features with minimal HTML and CSS.
+  Comments like this will be through the code to explain briefly
+  what each feature is and point you to the MkDocs documentation
+  to find out more.
+-->
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name|striptags }}</title>
+  <link rel="stylesheet" href="{{ "css/theme.css"|url }}">
+  <link rel="stylesheet" href="{{ "css/pygments.css"|url }}">
+  {% for path in config.extra_css %}
+    <link href="{{ path|url }}" rel="stylesheet">
+  {% endfor %}
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+  <script src="{{ "js/theme.js"|url }}"></script>
+  {% block extrahead %}
+  {% endblock %}
+
+
+  {% for path in config.extra_javascript %}
+    <script src="{{ path|url }}"></script>
+  {% endfor %}
+
+  {% if config.google_analytics %}
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{{ config.google_analytics[0] }}', '{{ config.google_analytics[1] }}');
+      ga('send', 'pageview');
+  </script>
+  {% endif %}
+
+</head>
+
+<body>
+  <div class="header">
+    <tab>
+      <ul>
+        <li class="logo">
+          <a href="/">{{ config.site_name }}</a>
+        </li>
+        {% for nav_item in nav %}
+          {% include "tab.html" %}
+        {% endfor %}
+
+        <li class="tools">
+          {% if (nav | selectattr("active") | first).children   %}
+          <label class="nav-menu tool" for="nav-chk">
+            <svg><use xlink:href="/svg/sprite.svg#menu-2"></use></svg>
+          </label>
+          {% endif %}
+          <a class="tool">
+            <svg><use xlink:href="/svg/sprite.svg#search"></use></svg>
+          </a>
+          <a class="tool">
+            <svg><use xlink:href="/svg/sprite.svg#tag"></use></svg>
+          </a>
+          {% if config.repo_url %}
+          <a class="tool" href="{{ config.repo_url }}">
+            <svg><use xlink:href="/svg/sprite.svg#brand-github"></use></svg>
+            <span>{{ config.repo_name }}</span>
+          </a>
+          {% endif %}
+        </li>
+      </ul>
+    </tab>
+  </div>
+
+  {% block content %}
+  <div class="content-container">
+    {% if (nav | selectattr("active") | first).children   %}
+    <div class="nav">
+      <input id="nav-chk" type="checkbox">
+      <div class="nav-bar">
+        <ul>
+          {% for nav_item in nav %}
+          {% if nav_item.active and nav_item.children %}
+            {% for nav_item in nav_item.children %}
+            {% include "nav.html" %}
+            {% endfor %}
+          {% endif %}
+          {% endfor %}
+          </ul>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="content">
+      {{ page.content }}
+    </div>
+
+    {% if page.toc and (page.toc | first).children %}
+    <div class="toc">
+      <ul>
+        {% for toc_item in (page.toc | first).children %}
+          <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  {% endblock %}
+
+  <div class="page">
+    <div class="page-prev">
+      {% if page.previous_page %}
+      <a href="{{ page.previous_page.url|url }}" title="{{ page.previous_page.title }}">« Previous</a>
+      {% else %}
+      « Previous
+      {% endif %}
+    </div>
+    <div class="page-next">
+      {% if page.next_page %}
+      <a href="{{ page.next_page.url|url }}" title="{{ page.next_page.title }}" />Next »</a>
+      {% else %}
+      Next »
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="footer">
+  Built with <a href="https://www.mkdocs.org">mkdocs</a> with the <a href="https://github.com/yqshao/mkdocs-flux-theme">flux</a> theme.
+  </div>
+</body>
+</html>

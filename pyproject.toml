@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkdocs-flux"
+authors = [
+  { name="Yunqi Shao",email="yunqi_shao@yahoo.com" },
+]
+description = "Flux: A minimalistic mkdocs theme"
+license = "BSD-3-Clause"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["mkdocs==1.4.2"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+full = [
+  "pygments>=2.14.0",
+  "pymdown-extensions==9.9.2",
+  "mkdocs-bibtex==2.8.15 ",
+]
+
+[project.entry-points."mkdocs.themes"]
+flux = "mkdocs_flux"
+
+[project.urls]
+"Homepage" = "https://github.com/yqshao/mkdocs-flux"
+"Bug Tracker" = "https://github.com/yqshao/mkdocs-flux/issues"
+
+[tool.hatch.envs.default]
+features = ["full"]
+
+[tool.hatch.version]
+path = "mkdocs_flux/__init__.py"
