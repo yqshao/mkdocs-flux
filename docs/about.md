@@ -10,9 +10,9 @@ features will be opinionated.
 
 This theme is intended my projects below:
 
-- PiNN and PiNNacle 
-- TAME
-- ZMol.js
+- ~~PiNN~~ and [PiNNacle][pinnacle]
+- ~~TAME~~
+- ~~ZMol.js~~
 
 If you use this theme for your project, feel free to contact me to add it above.
 
@@ -20,7 +20,10 @@ If you use this theme for your project, feel free to contact me to add it above.
 
 The project takes inspiration from a number of open-source project, notable the
 [miniflux] reader as the initial inspiration, [mkdocs-materials] for its ample
-collection of features.
+collection of features. The color theme is taken from [Paul Tol][ptol]'s
+medium-contrast scheme.
 
+[pinnacle]: https://teoroo-cmc.github.io/pinnacle/
 [miniflux]: https://miniflux.app
 [mkdocs-materials]: https://squidfunk.github.io/mkdocs-material/
+[ptol]: https://personal.sron.nl/~pault/

@@ -1,4 +1,8 @@
+repo_name: yqshao/mkdocs-flux
+repo_url: https://github.com/yqshao/mkdocs-flux
 site_name: "mkdocs<span>flux</span>"
+site_url: https://yqshao.github.io/mkdocs-flux
+
 
 watch:
   - mkdocs_flux
@@ -22,10 +26,10 @@ plugins:
 markdown_extensions:
   - admonition
   - footnotes
-  - pymdownx.superfences
+  - pymdownx.tilde
   - pymdownx.tabbed
-  - pymdownx.highlight:
-      linenums: true
+  - pymdownx.superfences
+  - pymdownx.highlight
   - pymdownx.arithmatex:
       generic: true
 
@@ -34,5 +38,3 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   
-repo_url: https://github.com/yqshao/mkdocs-flux
-repo_name: yqshao/mkdocs-flux

@@ -1,4 +1,3 @@
-
 window.MathJax = {
     tex: {
       inlineMath: [["\\(", "\\)"]],
@@ -10,10 +9,4 @@ window.MathJax = {
       ignoreHtmlClass: ".*|",
       processHtmlClass: "arithmatex"
     }
-  };
-  
-  document$.subscribe(() => { 
-  
-  
-    MathJax.typesetPromise()
-  })
+};
