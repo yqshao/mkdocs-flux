@@ -1,19 +1,17 @@
 repo_name: yqshao/mkdocs-flux
 repo_url: https://github.com/yqshao/mkdocs-flux
+
 site_name: "mkdocs<span>flux</span>"
 site_url: https://yqshao.github.io/mkdocs-flux
 
-
-watch:
-  - mkdocs_flux
-
 nav:
   - Home: index.md
-  - Manual:
-    - Basics: manual/basics.md
-    - Markdown: manual/markdown.md
-    - BibTeX: manual/bibtex.md
-    - Docstring: manual/docstring.md
+  - Usage:
+    - Setup: usage/setup.md
+    - Markdown: usage/markdown.md
+    - Plugins:
+      - BibTeX: usage/bibtex.md
+      - Docstring: usage/docstring.md
   - About: about.md
 
 theme:
@@ -39,3 +37,5 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   
+watch:
+  - mkdocs_flux

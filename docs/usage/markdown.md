@@ -27,7 +27,7 @@ Following the documentation of [pymdownx][mathjax], you can include math
 equations by adding the extra javascript (mathjax or katex). To do so, make the
 following changes to your `mkdocs.yml` and `docs/js/mathjax.js`.
 
-=== "Edit `mkdocs.yml`"
+=== "`mkdocs.yml`"
     ```yaml
     extra_javascript:
       - js/mathjax.js
@@ -35,7 +35,7 @@ following changes to your `mkdocs.yml` and `docs/js/mathjax.js`.
       - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     ```
 
-=== "Create `docs/js/mathjax.js`"
+=== "`docs/js/mathjax.js`"
     ``` javascript
     window.MathJax = {
     tex: {

@@ -1,20 +1,12 @@
-# Basics
+# Installation and Setup
 
-## Use a template
-
-If you are creating a new repo, the easist way of use the theme is to use one of
-the templates, which setups up the developer's environment with some recommended
-setups, auto-building of the documentation with Github pages, and a code space.
-If you'd like to manually set up mkdocs, follow the installation instruction
-below, along with a commented config file.
-
-## Installation and setup
+## Installation
 
 ```bash
 pip install git+https://github.com/yqshao/mkdocs-flux.git
 ```
 
-Put the following into your mkdocs.yml, available options are explained here
+## Basic Setup
 
 ```yaml
 site_name: "mkdocs<span>flux</span>" # the <span> part changes color on hover
