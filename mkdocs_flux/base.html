@@ -33,6 +33,12 @@
   crossorigin="anonymous"></script>
   <script src="{{ "js/theme.js"|url }}"></script>
 
+  <script>
+    $(document).ready(function(){
+          $('table').wrap('<div class="table-wrapper"></div>');
+    });
+  </script>
+
   {% for path in config.extra_javascript %}
     <script src="{{ path|url }}"></script>
   {% endfor %}

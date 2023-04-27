@@ -554,7 +554,6 @@ table:not(.highlighttable) td:first-of-type{
 }
 
 table:not(.highlighttable) td:last-of-type{
-    white-space: unset;
     width: 100%;
 }
 
@@ -592,4 +591,9 @@ details summary {
 
 .arithmatex {
     overflow: auto;
+}
+
+.table-wrapper {
+    overflow: auto;
+    padding-bottom: 10px;
 }
