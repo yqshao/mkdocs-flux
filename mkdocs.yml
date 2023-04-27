@@ -22,6 +22,7 @@ theme:
 plugins:
   - bibtex:
       bib_file: "docs/refs.bib"
+      csl_file: "docs/jcp.csl"
 
 markdown_extensions:
   - admonition

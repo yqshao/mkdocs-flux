@@ -477,6 +477,14 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     border-color: inerit;
 }
 
+.admonition a {
+    color: inherit;
+}
+
+.admonition a:hover {
+    color: var(--text-color);
+}
+
 .admonition.note {
     color: var(--mc-db)
 }
@@ -558,6 +566,24 @@ p {
 details summary {
     margin-left: 0;
     margin-bottom: 1em;
+}
+
+.footnote > ol > li > p > sup:nth-child(1) {
+    display: none;
+}
+
+.footnote > ol {
+    padding-left: 0em;
+    list-style-position: inside;
+    font-size: 10pt;
+    line-height: 1.25em;
+}
+
+.footnote > ol p {
+    width: calc (100% - 2em);
+    padding-left: 2em;
+    margin-top: -1.25em;
+    margin-bottom: .25em;
 }
 
 [data-linenos]:before {
