@@ -589,3 +589,7 @@ details summary {
 [data-linenos]:before {
     content: attr(data-linenos);
 }
+
+.arithmatex {
+    overflow: auto;
+}
