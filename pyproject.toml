@@ -20,6 +20,7 @@ full = [
   "pymdown-extensions==9.9.2",
   "mkdocs-bibtex==2.8.15 ",
   "mkdocstrings[python]==0.20.0",
+  "pypandoc_binary==1.11",
 ]
 
 [project.entry-points."mkdocs.themes"]
