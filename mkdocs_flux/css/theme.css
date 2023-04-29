@@ -27,6 +27,12 @@ p:nth-child(1) {
 code {
     font-family: 'Source Code Pro', monospace;
     font-size: 11pt;
+    color: var(--theme-color);
+}
+
+table code {
+    color: var(--text-color);
+    font-size: 0.9em;
 }
 
 /* Layout */
@@ -481,6 +487,10 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     color: inherit;
 }
 
+.admonition code {
+    color: inherit;
+}
+
 .admonition a:hover {
     color: var(--text-color);
 }
@@ -600,4 +610,8 @@ details summary {
 .table-wrapper {
     overflow: auto;
     padding-bottom: 10px;
+}
+
+.highlight code {
+    color: var(--text-color);
 }
