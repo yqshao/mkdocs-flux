@@ -500,14 +500,18 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     color: var(--mc-dr)
 }
 
-.admonition-title {
+.admonition > p.admonition-title {
     font-weight: 600;
     text-align: left;
     padding: .25em .5em;
     margin: 0;
 }
 
-.admonition>p:last-child {
+.admonition > p {
+    margin: .5em;
+}
+
+.admonition > div {
     margin: .5em;
 }
 
