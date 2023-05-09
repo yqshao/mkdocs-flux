@@ -20,14 +20,6 @@
     --border-color:  rgb(var(--mc-g6));
 }
 
-p:nth-child(1) {
-    margin-top: 0em;
-}
-
-p:last-child {
-    margin-bottom: 0em;
-}
-
 code {
     font-family: 'Source Code Pro', monospace;
     font-size: 11pt;
@@ -41,24 +33,44 @@ table code {
 
 /* Layout */
 
+header {
+    margin-top: 10px
+}
+
 hr {
     border: none;
     border-bottom: 1px dotted var(--border-color);
 }
 
 #content {
-    margin-bottom: 1em;
+    margin-bottom: 10px;
+}
+
+#content ul {
+    padding-left: 30px;
+}
+
+#content ol {
+    padding-left: 30px;
+}
+
+#content ul:nth-child(1) {
+    margin-top: 0em;
+}
+
+#content ul:last-child {
+    margin-bottom: 0em;
 }
 
 body {
-    margin-right: 1em;
-    margin-left: 1em;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #main {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin-bottom: 10px;
 }
 
 #tab-bar {
@@ -400,7 +412,7 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
 .highlight {
     border: 1px dotted var(--border-color);
     border-radius: 2px;
-    background-color: rgba(var(--mc-g1), 0.3);
+    background-color: rgba(var(--mc-g2), 0.25);
     padding: 10px;
     margin: 0;
     overflow-x: auto;
@@ -475,7 +487,7 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
         padding: 10px;
         border: 1px dotted var(--border-color);
         border-radius: 2px;
-        background-color: rgba(var(--mc-g1), 0.3);
+        background-color: rgba(var(--mc-g2), 0.25);
     }
     .tabbed-set input:nth-child(n+1):checked+label+.tabbed-content > .highlight:only-child {
         border: none;
@@ -485,51 +497,79 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     }
 }
 
+details,
+.admonition {
+    --fg-color: var(--border-color);
+    --bg-color: rgba(var(--mc-g2), 0.25);
+}
 
+details.note,
+.admonition.note {
+    --fg-color: rgb(var(--mc-db));
+    --bg-color: rgba(var(--mc-lb), 0.25);
+}
+
+details.warning,
+.admonition.warning {
+    --fg-color: rgb(var(--mc-dy));
+    --bg-color: rgba(var(--mc-ly), 0.25);
+}
+
+details.danger,
+.admonition.danger {
+    --fg-color: rgb(var(--mc-dr));
+    --bg-color: rgba(var(--mc-lr), 0.25);
+}
+
+details,
 .admonition {
     text-align: left;
-    border: 3px solid;
     border-radius: 2px;
+    border: 3px solid var(--fg-color);
+    background: var(--bg-color)
 }
 
-.admonition > .admonition-title {
-    text-align: left;
-    border-bottom: 1px dotted;
-}
-
-.admonition.note {
-    border-color: rgb(var(--mc-db));
-    background-color: rgba(var(--mc-lb), 0.3);
-}
-
-.admonition.warning {
-    border-color: rgb(var(--mc-dy));
-    background-color: rgba(var(--mc-ly), 0.3);
-}
-
-.admonition.danger {
-    border-color: rgb(var(--mc-dr));
-    background-color: rgba(var(--mc-lr), 0.3);
-}
-
+details > summary,
 .admonition > p.admonition-title {
     font-weight: 600;
     text-align: left;
     padding: .25em .5em;
     margin: 0;
+    color: var(--fg-color);
 }
 
-.admonition > p {
-    margin: .5em;
+details[open] > summary,
+.admonition > p.admonition-title {
+    border-bottom: 1px dotted var(--fg-color);
 }
 
+details > summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+details > p,
+details > div,
+.admonition > p ,
 .admonition > div {
-    margin: .5em;
+    margin: .5em; !important
+}
+
+.admonition-title + .highlight:last-child,
+summary + .highlight:last-child {
+    background: none;
+    border: none;
+    padding: 10px;
+    margin: 0;
+}
+
+details > summary:hover {
+    color: var(--text-color);
 }
 
 blockquote {
     margin: 0;
-    background-color: rgba(var(--mc-g3), 0.3);
+    background-color: rgba(var(--mc-g2), 0.25);
 }
 
 blockquote>p {
@@ -546,7 +586,7 @@ table:not(.highlighttable) {
 }
 
 table:not(.highlighttable) th {
-    background-color: rgba(var(--mc-g3), 0.3);
+    background-color: rgba(var(--mc-g2), 0.25);
     text-align: left;
     font-weight: 600;
     font-size: 0.9em;
@@ -579,17 +619,12 @@ p {
     scrollbar-width: thin;
 }
 
-details summary {
-    margin-left: 0;
-    margin-bottom: 1em;
-}
-
 .footnote > ol > li > p > sup:nth-child(1) {
     display: none;
 }
 
 .footnote > ol {
-    padding-left: 0em;
+    padding-left: 0 !important;
     list-style-position: inside;
     font-size: 10pt;
     line-height: 1.25em;
@@ -650,7 +685,7 @@ details summary {
   display: block;
   width:  12px;
   height: 12px;
-  background-color: rgba(var(--mc-g3), 0.3);
+  background-color: rgba(var(--mc-g2), 0.25);
   border-radius: 2px;
   border: 1px dotted var(--border-color);
 }
@@ -665,10 +700,3 @@ details summary {
   color: var(--text-color);
 }
 
-ul {
-    padding-left: 30px;
-}
-
-ol {
-    padding-left: 30px;
-}
