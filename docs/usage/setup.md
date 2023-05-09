@@ -1,6 +1,14 @@
 # Installation and Setup
 
-## Installation
+Install the latest release through [PyPI]:
+
+[PyPI]: https://pypi.org/project/mkdocs-flux
+
+```bash
+pip install mkdocs-flux
+```
+
+or the latest version directly through the GitHub repo:
 
 ```bash
 pip install git+https://github.com/yqshao/mkdocs-flux.git
@@ -8,35 +16,37 @@ pip install git+https://github.com/yqshao/mkdocs-flux.git
 
 ## Basic Setup
 
-```yaml
-site_name: "mkdocs<span>flux</span>" # the <span> part changes color on hover
+To start with, here is a minimal setup for a new project:
 
+```yaml
+# the span tag provides the color-swap effect
+site_name: "mkdocs<span>flux</span>" 
+site_url: https://yqshao.github.io/mkdocs-flux
+# this gives the git icon 
+repo_name: yqshao/mkdocs-flux 
+repo_url: https://github.com/yqshao/mkdocs-flux
+# the first-level labels will become tabs,
+# the second/third becomes pages or sections
 nav:
   - Home: index.md
-  - Manual:
-    - Baics: manual/basics.md
-    - MathJax: manual/mathjax.md
+  - Usage:
+      - Setup: usage/setup.md
+      - Markdown: usage/markdown.md
+      - Plugins:
+          - pymdownx: usage/pymdownx.md
+          - bibtex: usage/bibtex.md
   - About: about.md
 
-theme:
-    name: flux
-
-markdown_extensions:
-  - pymdownx.highlight:
-      linenums: true
-  - pymdownx.superfences
-  - pymdownx.arithmatex:
-      generic: true
-
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-# When the repo link is set, a github icon is displayed on top right
-repo_url: https://github.com/yqshao/mkdocs-flux
-repo_name: mkdocs-flux
 ```
+
+Below you find a more elaborated setup is for this website, it cover most of the
+features known to work. Check individual pages to see details for each plugin.
+
+??? Note "config for this site"
+
+    ```yaml
+    --8<-- "mkdocs.yml"
+    ```
 
 ## Write your documentation
 

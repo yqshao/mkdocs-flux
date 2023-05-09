@@ -1,21 +1,21 @@
-repo_name: yqshao/mkdocs-flux
-repo_url: https://github.com/yqshao/mkdocs-flux
-
 site_name: "mkdocs<span>flux</span>"
 site_url: https://yqshao.github.io/mkdocs-flux
+
+repo_name: yqshao/mkdocs-flux
+repo_url: https://github.com/yqshao/mkdocs-flux
 
 nav:
   - Home: index.md
   - Usage:
-    - Setup: usage/setup.md
-    - Markdown: usage/markdown.md
-    - Plugins:
-      - BibTeX: usage/bibtex.md
-      - Docstring: usage/docstring.md
+      - Setup: usage/setup.md
+      - Markdown: usage/markdown.md
+      - Plugins:
+          - pymdownx: usage/pymdownx.md
+          - bibtex: usage/bibtex.md
   - About: about.md
 
 theme:
-    name: flux
+  name: flux
 
 plugins:
   - bibtex:
@@ -25,17 +25,22 @@ plugins:
 markdown_extensions:
   - admonition
   - footnotes
+  - pymdownx.details
+  - pymdownx.snippets
   - pymdownx.tilde
   - pymdownx.tabbed
   - pymdownx.superfences
   - pymdownx.highlight
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
   - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:
-  - javascripts/mathjax.js
+  - js/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  
+
 watch:
   - mkdocs_flux
