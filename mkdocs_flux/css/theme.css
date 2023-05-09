@@ -1,27 +1,31 @@
 :root {
     font-family: "Noto Sans", system-ui, -apple-system, sans-serif;
     font-size: 11pt;
-    --mc-db: #004488 ;
-    --mc-lb: #6699cc;
-    --mc-dr: #994455;
-    --mc-lr: #ee99aa;
-    --mc-dy: #997700;
-    --mc-ly: #eecc66;
-    --mc-g1: #d7d7d7;
-    --mc-g2: #bfbfbf;
-    --mc-g3: #a6a6a6;
-    --mc-g4: #8e8e8e;
-    --mc-g5: #737373;
-    --mc-g6: #575757;
+    --mc-db:   0,  68, 136;
+    --mc-lb: 102, 153, 204;
+    --mc-dr: 153,  68,  85;
+    --mc-lr: 238, 153, 170;
+    --mc-dy: 153, 119,   0;
+    --mc-ly: 238, 204, 102;
+    --mc-g1: 215, 215, 215;
+    --mc-g2: 191, 191, 191;
+    --mc-g3: 166, 166, 166;
+    --mc-g4: 142, 142, 142;
+    --mc-g5: 115, 115, 115 ;
+    --mc-g6:  87,  87,  87;
     --text-color: black;
-    --theme-color: var(--mc-dr);
-    --comment-color: var(--mc-g3);
-    --comment-hover: var(--mc-g6);
-    --border-color: var(--mc-g6);
+    --theme-color:   rgb(var(--mc-dr));
+    --comment-color: rgb(var(--mc-g3));
+    --comment-hover: rgb(var(--mc-g6));
+    --border-color:  rgb(var(--mc-g6));
 }
 
 p:nth-child(1) {
     margin-top: 0em;
+}
+
+p:last-child {
+    margin-bottom: 0em;
 }
 
 code {
@@ -32,14 +36,14 @@ code {
 
 table code {
     color: var(--text-color);
-    font-size: 0.9em;
+    font-size: 10pt;
 }
 
 /* Layout */
 
 hr {
     border: none;
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted var(--border-color);
 }
 
 #content {
@@ -218,18 +222,23 @@ body {
     cursor: pointer;
 }
 
+#content > p {
+    margin: 10px 0;
+}
 
 #content h1 {
-    border-bottom: 1px dotted;
-    border-color: var(--border-color);
+    border-bottom: 1px dotted var(--border-color);
     font-size: 2em;
     font-weight: normal;
     margin-top: .25em;
 }
 
 #content h2 {
+    border-bottom: 1px dotted var(--border-color);
     font-size: 1.5em;
     font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 
 /* text colors */
@@ -390,6 +399,8 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
 
 .highlight {
     border: 1px dotted var(--border-color);
+    border-radius: 2px;
+    background-color: rgba(var(--mc-g1), 0.3);
     padding: 10px;
     margin: 0;
     overflow-x: auto;
@@ -423,7 +434,7 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     display: none;
 }
 
-.tabbed-set label {
+.tabbed-set>label {
     color: var(--comment-color);
     width: auto;
     padding: 5px 10px;
@@ -434,7 +445,7 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     z-index: 1;
 }
 
-.tabbed-set label:hover {
+.tabbed-set>label:hover {
     color: var(--comment-hover);
     box-shadow: 0 3px 0 var(--comment-hover);
 }
@@ -445,12 +456,12 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     overflow: hidden;
 }
 
-.tabbed-set input {
+.tabbed-set > input {
     position: absolute;
     opacity: 0;
 }
 
-.tabbed-set input:checked:nth-child(n+1)+label {
+.tabbed-set > input:checked:nth-child(n+1)+label {
     color: var(--theme-color);
     font-weight: 600;
     box-shadow: 0 3px 0 var(--theme-color);
@@ -463,11 +474,14 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
         display: block;
         padding: 10px;
         border: 1px dotted var(--border-color);
+        border-radius: 2px;
+        background-color: rgba(var(--mc-g1), 0.3);
     }
     .tabbed-set input:nth-child(n+1):checked+label+.tabbed-content > .highlight:only-child {
         border: none;
         padding: 10px;
         margin: -10px;
+        background: none;
     }
 }
 
@@ -475,39 +489,27 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
 .admonition {
     text-align: left;
     border: 3px solid;
+    border-radius: 2px;
 }
 
 .admonition > .admonition-title {
     text-align: left;
     border-bottom: 1px dotted;
-    border-color: inerit;
-}
-
-.admonition a {
-    color: inherit;
-}
-
-.admonition code {
-    color: inherit;
-}
-
-.admonition a:hover {
-    color: var(--text-color);
 }
 
 .admonition.note {
-    color: var(--mc-db)
-}
-
-.admonition.note > .admonition-title {
+    border-color: rgb(var(--mc-db));
+    background-color: rgba(var(--mc-lb), 0.3);
 }
 
 .admonition.warning {
-    color: var(--mc-dy);
+    border-color: rgb(var(--mc-dy));
+    background-color: rgba(var(--mc-ly), 0.3);
 }
 
 .admonition.danger {
-    color: var(--mc-dr)
+    border-color: rgb(var(--mc-dr));
+    background-color: rgba(var(--mc-lr), 0.3);
 }
 
 .admonition > p.admonition-title {
@@ -527,11 +529,12 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
 
 blockquote {
     margin: 0;
+    background-color: rgba(var(--mc-g3), 0.3);
 }
 
 blockquote>p {
-    border: 3px solid;
-    color: var(--mc-g6);
+    border: 3px solid var(--border-color);
+    border-radius: 2px;
     padding: .5em;
 }
 
@@ -543,7 +546,7 @@ table:not(.highlighttable) {
 }
 
 table:not(.highlighttable) th {
-    background: var(--mc-g1);
+    background-color: rgba(var(--mc-g3), 0.3);
     text-align: left;
     font-weight: 600;
     font-size: 0.9em;
@@ -593,8 +596,8 @@ details summary {
 }
 
 .footnote > ol p {
-    width: calc (100% - 2em);
-    padding-left: 2em;
+    width: calc (100% - 30px);
+    padding-left: 30px;
     margin-top: -1.25em;
     margin-bottom: .25em;
 }
@@ -614,4 +617,58 @@ details summary {
 
 .highlight code {
     color: var(--text-color);
+}
+
+.task-list-item {
+  list-style-type: none !important;
+}
+
+.task-list-item input[type="checkbox"] {
+  display: none;
+}
+
+.task-list-control {
+  display: inline; /* Ensure label is inline incase theme sets it to block.*/
+}
+
+.task-list-control {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.task-list-control input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+
+.task-list-indicator {
+  position: absolute;
+  top: -11px;
+  left: -20px;
+  display: block;
+  width:  12px;
+  height: 12px;
+  background-color: rgba(var(--mc-g3), 0.3);
+  border-radius: 2px;
+  border: 1px dotted var(--border-color);
+}
+
+.task-list-control input[type="checkbox"]:checked + .task-list-indicator::before {
+  display: block;
+  margin-top: -4px;
+  margin-left: 2px;
+  font-size: 15px;
+  line-height: 1;
+  content: "✔";
+  color: var(--text-color);
+}
+
+ul {
+    padding-left: 30px;
+}
+
+ol {
+    padding-left: 30px;
 }
