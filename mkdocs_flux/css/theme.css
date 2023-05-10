@@ -18,6 +18,7 @@
     --comment-color: rgb(var(--mc-g3));
     --comment-hover: rgb(var(--mc-g6));
     --border-color:  rgb(var(--mc-g6));
+    --chevron-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-left' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 6l-6 6l6 6' /%3E%3C/svg%3E");
 }
 
 code {
@@ -545,6 +546,28 @@ details[open] > summary,
 details > summary {
     cursor: pointer;
     list-style: none;
+    position: relative;
+}
+
+details > summary::after {
+    content:"";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: var(--fg-color);
+    right: 10px;
+    mask-image: var(--chevron-left);
+    mask-size: contain;
+    box-sizing: border-box;
+    mask-position: center;
+}
+
+details > summary:hover::after {
+    background-color: var(--text-color);
+}
+
+details[open] > summary::after {
+    transform: rotate(-90deg);
 }
 
 details > p,
