@@ -46,16 +46,9 @@ hr {
     margin-bottom: 10px;
 }
 
-#content ul {
-    padding-left: 30px;
-}
-
+#content ul,
 #content ol {
     padding-left: 30px;
-}
-
-#content ul:nth-child(1) {
-    margin-top: 0em;
 }
 
 #content ul:last-child {
@@ -250,7 +243,7 @@ body {
     font-size: 1.5em;
     font-weight: normal;
     margin-top: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 /* text colors */
@@ -298,9 +291,10 @@ a:hover {
 .footer {
     border-top: 1px dotted;
     border-color: var(--border-color);
-    font-size: 12px;
+    font-size: 8pt;
     color: var(--comment-color);
     text-align: center;
+    padding: 10px 0px;
 }
 
 #logo {
@@ -414,7 +408,6 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     border-radius: 2px;
     background-color: rgba(var(--mc-g2), 0.25);
     padding: 10px;
-    margin: 0;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: thin;
@@ -479,22 +472,28 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     box-shadow: 0 3px 0 var(--theme-color);
 }
 
+.tabbed-set input:nth-child(n+1):checked+label+.tabbed-content {
+    order: 99;
+    display: block;
+    padding: 10px;
+    border: 1px dotted var(--border-color);
+    border-radius: 2px;
+    background-color: rgba(var(--mc-g2), 0.25);
+}
 
-@media screen {
-    .tabbed-set input:nth-child(n+1):checked+label+.tabbed-content {
-        order: 99;
-        display: block;
-        padding: 10px;
-        border: 1px dotted var(--border-color);
-        border-radius: 2px;
-        background-color: rgba(var(--mc-g2), 0.25);
-    }
-    .tabbed-set input:nth-child(n+1):checked+label+.tabbed-content > .highlight:only-child {
-        border: none;
-        padding: 10px;
-        margin: -10px;
-        background: none;
-    }
+.tabbed-set input:nth-child(n+1):checked+label+.tabbed-content > .highlight:only-child {
+    border: none;
+    padding: 10px;
+    margin: -10px;
+    background: none;
+}
+
+.tabbed-content > :first-child {
+    margin-top: 0;
+}
+
+.tabbed-content > :last-child {
+    margin-bottom: 0;
 }
 
 details,
@@ -533,7 +532,7 @@ details > summary,
 .admonition > p.admonition-title {
     font-weight: 600;
     text-align: left;
-    padding: .25em .5em;
+    padding: 5px 10px;
     margin: 0;
     color: var(--fg-color);
 }
@@ -552,7 +551,7 @@ details > p,
 details > div,
 .admonition > p ,
 .admonition > div {
-    margin: .5em; !important
+    margin: 10px; !important
 }
 
 .admonition-title + .highlight:last-child,
@@ -619,7 +618,7 @@ p {
     scrollbar-width: thin;
 }
 
-.footnote > ol > li > p > sup:nth-child(1) {
+.footnote > ol > li > p > sup:first-child {
     display: none;
 }
 
