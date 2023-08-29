@@ -404,6 +404,28 @@ input[id='nav-chk']:not(:checked)+.nav-bar {
     display: inline;
 }
 
+.tool > .version {
+    display: inline;
+}
+
+
+.tool > .version > select {
+    display: none;
+    border: none;
+    background: none;
+    color: var(--comment-hover);
+    text-decoration: underline solid var(--comment-hover);
+    font-size: 1em;
+}
+
+.tool:hover > .version > select {
+    display: inline;
+}
+
+.tool > .version > select:focus {
+    display: inline;
+}
+
 .highlight {
     border: 1px dotted var(--border-color);
     border-radius: 2px;
