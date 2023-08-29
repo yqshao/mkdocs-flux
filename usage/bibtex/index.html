@@ -1,0 +1,261 @@
+<!--
+  This Basic theme serves as an example for how to create other
+  themes by demonstrating the features with minimal HTML and CSS.
+  Comments like this will be through the code to explain briefly
+  what each feature is and point you to the MkDocs documentation
+  to find out more.
+-->
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>bibtex - mkdocsflux</title>
+
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/pygments.css">
+  <link rel="icon" href="data:,">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+  <script>
+    var base_url = "../..";
+    $(document).ready(function(){
+          $('table').wrap('<div class="table-wrapper"></div>');
+    });
+  </script>
+
+  <script src="../../js/mike.js"></script>
+
+  
+    <script src="../../js/mathjax.js"></script>
+  
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+</head>
+
+<body>
+  <header class="header">
+    <ul>
+      <li id="logo">
+        <a href="../..">mkdocs<span>flux</span></a>
+      </li>
+      
+      
+  <li  class="tab" >
+    <a href="../.." class="">
+      Home
+    </a>
+  </li>
+
+      
+      
+  
+  <li class="active tab" >
+    <a href="../setup/">
+      Usage
+    </a>
+  </li>
+
+      
+      
+  <li  class="tab" >
+    <a href="../../about/" class="">
+      About
+    </a>
+  </li>
+
+      
+      <li class="tools">
+        
+          <a id="nav-toggle" class="tool" onclick="nav_toggle()">
+        
+          <svg><use xlink:href="../../svg/sprite.svg#menu-2"></use></svg>
+        </a>
+        <script>
+           function nav_toggle() {
+               var bar = document.getElementById("tab-bar");
+               if (bar.style.display === "none") {
+                   bar.style.display = "block";
+               } else {
+                   bar.style.display = "none";
+               }
+           }
+          function nav_reset() {
+              var bar = document.getElementById("tab-bar");
+              if (window.innerWidth>950){
+                  bar.style.display = "block";
+              } else {
+                  bar.style.display = "none";
+              }
+          }
+          window.onresize = nav_reset;
+        </script>
+        
+        
+        <a class="tool" href="https://github.com/yqshao/mkdocs-flux">
+          <svg><use xlink:href="../../svg/sprite.svg#brand-github"></use></svg>
+          <span>yqshao/mkdocs-flux</span>
+        </a>
+        
+      </li>
+    </ul>
+  </header>
+
+
+  <div id="main">
+    <div id="tab-bar">
+      <ul>
+      
+       
+  <li  class="tab" >
+    <a href="../.." class="">
+      Home
+    </a>
+  </li>
+
+         
+           <div class="nav-bar">
+             <ul>
+               
+             </ul>
+           </div>
+         
+      
+       
+  
+  <li class="active tab" >
+    <a href="../setup/">
+      Usage
+    </a>
+  </li>
+
+         
+           <div class="nav-bar">
+             <ul>
+               
+                 
+                   
+    <li >
+      <a href="../setup/" class="">
+        Setup
+      </a>
+    </li>
+
+                 
+                   
+    <li >
+      <a href="../markdown/" class="">
+        Markdown
+      </a>
+    </li>
+
+                 
+                   
+  <a class="nav-title" > Plugins </a>
+  
+    
+    <li >
+      <a href="../pymdownx/" class="">
+        pymdownx
+      </a>
+    </li>
+
+  
+    
+    <li class="active">
+      <a href="./" class="">
+        bibtex
+      </a>
+    </li>
+
+  
+
+                 
+               
+             </ul>
+           </div>
+         
+      
+       
+  <li  class="tab" >
+    <a href="../../about/" class="">
+      About
+    </a>
+  </li>
+
+         
+           <div class="nav-bar">
+             <ul>
+               
+             </ul>
+           </div>
+         
+      
+      </ul>
+    </div>
+
+    <div id="content">
+      <h1 id="bibtex-support">BibTeX support</h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of Apr. 2023 (mkdocs-bibtex v2.8.16) there is a known <a href="https://github.com/shyamd/mkdocs-bibtex/issues/173">issue</a> of
+mkdocs-bibtex overwriting existing footnotes. Change your footnote keys if
+this happens.</p>
+</div>
+<p>Basic referencing is possible. You'll need the <a href="https://github.com/shyamd/mkdocs-bibtex/">mkdocs-bibtex</a> plugin, and add
+the following to your <code>mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">bibtex</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">bib_file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;docs/refs.bib&quot;</span>
+<span class="w">      </span><span class="nt">csl_file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;docs/jcp.csl&quot;</span>
+</code></pre></div>
+<p>References show up as footnotes at the end of the page like this.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>
+The pandoc syntax <code>[@bib_key]</code> applies, and the citation style can be changed
+with the <code>csl_file</code> option. However, advanced features like locator or suffix
+do not seem to work so far.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><sup>1</sup> L. Onsager, “<a href="https://doi.org/10.1103/physrev.37.405">Reciprocal relations in irreversible processes. I.</a>” Phys. Rev. <strong>37</strong>(4), 405–426 (1931).&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    </div>
+
+  </div>
+
+  <div class="page">
+    <div class="page-prev">
+      
+      <a href="../pymdownx/" title="pymdownx"><span>«</span> Previous</a>
+      
+    </div>
+    <div class="page-next">
+      
+      <a href="../../about/" title="About" />Next <span>»</span></a>
+      
+    </div>
+  </div>
+
+  <div class="footer">
+    Built with <a href="https://www.mkdocs.org">mkdocs</a> and the <a href="https://github.com/yqshao/mkdocs-flux-theme">flux</a> theme.
+  </div>
+</body>
+</html>

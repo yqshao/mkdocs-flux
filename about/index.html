@@ -1,0 +1,187 @@
+<!--
+  This Basic theme serves as an example for how to create other
+  themes by demonstrating the features with minimal HTML and CSS.
+  Comments like this will be through the code to explain briefly
+  what each feature is and point you to the MkDocs documentation
+  to find out more.
+-->
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!--
+    The page_title contains the title for a page as shown in the navigation.
+    Site name contains the name as defined in the mkdocs.yml
+  -->
+  <title>About - mkdocsflux</title>
+
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/pygments.css">
+  <link rel="icon" href="data:,">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+  <script>
+    var base_url = "..";
+    $(document).ready(function(){
+          $('table').wrap('<div class="table-wrapper"></div>');
+    });
+  </script>
+
+  <script src="../js/mike.js"></script>
+
+  
+    <script src="../js/mathjax.js"></script>
+  
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+
+</head>
+
+<body>
+  <header class="header">
+    <ul>
+      <li id="logo">
+        <a href="..">mkdocs<span>flux</span></a>
+      </li>
+      
+      
+  <li  class="tab" >
+    <a href=".." class="">
+      Home
+    </a>
+  </li>
+
+      
+      
+  
+  <li  class="tab" >
+    <a href="../usage/setup/">
+      Usage
+    </a>
+  </li>
+
+      
+      
+  <li class="active tab" >
+    <a href="./" class="">
+      About
+    </a>
+  </li>
+
+      
+      <li class="tools">
+        
+          <a id="nav-toggle" class="tool lonely" onclick="nav_toggle()">
+        
+          <svg><use xlink:href="../svg/sprite.svg#menu-2"></use></svg>
+        </a>
+        <script>
+           function nav_toggle() {
+               var bar = document.getElementById("tab-bar");
+               if (bar.style.display === "none") {
+                   bar.style.display = "block";
+               } else {
+                   bar.style.display = "none";
+               }
+           }
+          function nav_reset() {
+              var bar = document.getElementById("tab-bar");
+              if (window.innerWidth>950){
+                  bar.style.display = "block";
+              } else {
+                  bar.style.display = "none";
+              }
+          }
+          window.onresize = nav_reset;
+        </script>
+        
+        
+        <a class="tool" href="https://github.com/yqshao/mkdocs-flux">
+          <svg><use xlink:href="../svg/sprite.svg#brand-github"></use></svg>
+          <span>yqshao/mkdocs-flux</span>
+        </a>
+        
+      </li>
+    </ul>
+  </header>
+
+
+  <div id="main">
+    <div id="tab-bar">
+      <ul>
+      
+       
+  <li  class="tab" >
+    <a href=".." class="">
+      Home
+    </a>
+  </li>
+
+         
+      
+       
+  
+  <li  class="tab" >
+    <a href="../usage/setup/">
+      Usage
+    </a>
+  </li>
+
+         
+      
+       
+  <li class="active tab" >
+    <a href="./" class="">
+      About
+    </a>
+  </li>
+
+         
+      
+      </ul>
+    </div>
+
+    <div id="content">
+      <h1 id="about-the-theme">About the theme</h1>
+<p>The theme is intended for a few projects developed by me, including <a href="https://teoroo-cmc.github.io/pinn/">PiNN</a>,
+<a href="https://teoroo-cmc.github.io/pinnacle/">PiNNacle</a>, <a href="https://teoroo-cmc.github.io/tame/">TAME</a>, and the <a href="https://teoroo-cmc.github.io/TeChnicality/">technological notes</a> for the TeC
+group. Feel free to use the theme and let me know of bugs and suggestions
+through the <a href="https://github.com/yqshao/mkdocs-flux/issues/">GitHub issues</a>. The project is a hobby project, please understand
+that support might not be prompt and the functionality/aestheics are
+personal choices.</p>
+<p>The project takes inspiration from a number of open-source projects, notable the
+<a href="https://miniflux.app/">miniflux</a> reader as the initial inspiration, <a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-materials</a> for its ample
+examples of features. The color theme is taken from <a href="https://personal.sron.nl/~pault/">Paul Tol</a>'s
+medium-contrast scheme.</p>
+    </div>
+
+  </div>
+
+  <div class="page">
+    <div class="page-prev">
+      
+      <a href="../usage/bibtex/" title="bibtex"><span>«</span> Previous</a>
+      
+    </div>
+    <div class="page-next">
+      
+    </div>
+  </div>
+
+  <div class="footer">
+    Built with <a href="https://www.mkdocs.org">mkdocs</a> and the <a href="https://github.com/yqshao/mkdocs-flux-theme">flux</a> theme.
+  </div>
+</body>
+</html>
