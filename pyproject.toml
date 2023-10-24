@@ -21,6 +21,7 @@ dev = [
   "mkdocs-bibtex==2.11.0 ",
   "mkdocstrings[python]==0.23.0",
   "pypandoc_binary==1.12",
+  "mknotebooks==0.8.0",
 ]
 
 [project.entry-points."mkdocs.themes"]

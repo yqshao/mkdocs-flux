@@ -12,12 +12,14 @@ nav:
       - Plugins:
           - pymdownx: usage/pymdownx.md
           - bibtex: usage/bibtex.md
+          - notebooks: usage/notebook.ipynb
   - About: about.md
 
 theme:
   name: flux
 
 plugins:
+  - mknotebooks
   - bibtex:
       bib_file: "docs/refs.bib"
       csl_file: "docs/jcp.csl"
